@@ -1,0 +1,20 @@
+{
+  "clanMemberMaps": [
+    {
+      "rsn": "Player1",
+      "rank": "Owner"
+    },
+    {
+      "rsn": "Player2",
+      "rank": "Deputy Owner"
+    },
+    {
+      "rsn": "Player3",
+      "rank": "Admin"
+    },
+    {
+      "rsn": "Player4",
+      "rank": "Member"
+    }
+  ]
+}
