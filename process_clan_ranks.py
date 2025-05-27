@@ -5,14 +5,13 @@ import glob
 def process_clan_ranks():
     """
     Find the latest clan rank file in the uploads directory and process it.
-    Generate a simplified JSON file for the Discord bot.
+    Generate a simplified JSON file for the Discord bot that includes rank and joinedDate.
     """
     # Ensure uploads directory exists
     os.makedirs("uploads", exist_ok=True)
     
     # Find all JSON files in the uploads directory
     json_files = glob.glob("uploads/*.json")
-    
     if not json_files:
         print("No clan rank files found in the uploads directory.")
         return
@@ -27,11 +26,18 @@ def process_clan_ranks():
             data = json.load(f)
             clanmates = data.get("clanMemberMaps", [])
         
-        # Extract the clan ranks
+        # Extract the clan ranks and joined dates
         clan_dict = {
-            entry["rsn"]: entry["rank"]
-            for entry in clanmates if "rsn" in entry and "rank" in entry
+            entry["rsn"]: {
+                "rank": entry["rank"],
+                "joinedDate": entry["joinedDate"]
+            }
+            for entry in clanmates
+            if all(k in entry for k in ("rsn", "rank", "joinedDate"))
         }
+
+        # Sort by RSN alphabetically (optional)
+        clan_dict = dict(sorted(clan_dict.items(), key=lambda item: item[0]))
         
         # Write the processed output
         with open("clan_ranks_for_bot.json", "w") as f:
