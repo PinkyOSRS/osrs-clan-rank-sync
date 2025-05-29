@@ -17,6 +17,7 @@ output_dir.mkdir(exist_ok=True)
 # Adjusted path: clan file is in root directory
 clan_file = Path("clan_ranks_for_bot.json")
 discord_file = data_dir / "discord_members.csv"
+manually_matched_file = data_dir / "manual_matches.json"
 matched_output = output_dir / "matched_members.json"
 unmatched_output = output_dir / "unmatched_members.json"
 unmatched_rsn_output = output_dir / "unmatched_rsn.json"
@@ -32,6 +33,12 @@ with open(discord_file, "r", encoding="utf-8") as f:
     reader = csv.DictReader(f)
     for row in reader:
         discord_members.append(row)
+
+# Load manual matches
+manual_matches = {}
+if manually_matched_file.exists():
+    with open(manually_matched_file, "r", encoding="utf-8") as f:
+        manual_matches = json.load(f)
 
 # Define excluded roles
 excluded_roles = {"EasyPoll", "MemberList", "Clan Guest"}
@@ -61,6 +68,17 @@ excluded = []
 rsns = list(clan_data.keys())
 normalized_rsns = {normalize(rsn): rsn for rsn in rsns}
 matched_rsn_set = set()
+
+# Add manual matches first
+for rsn, match_info in manual_matches.items():
+    matched[rsn] = {
+        "discord_id": match_info.get("discord_id"),
+        "discord_user": match_info.get("discord_user"),
+        "nickname": match_info.get("nickname"),
+        "match_type": "manual",
+        "ambiguous": False
+    }
+    matched_rsn_set.add(rsn)
 
 for member in discord_members:
     if is_excluded(member):
@@ -154,23 +172,25 @@ for member in discord_members:
     if match:
         if isinstance(match, list):
             for m in match:
-                matched[m] = {
+                if m not in matched:
+                    matched[m] = {
+                        "discord_id": discord_id,
+                        "discord_user": user,
+                        "nickname": nick,
+                        "match_type": match_type,
+                        "ambiguous": True
+                    }
+                    matched_rsn_set.add(m)
+        else:
+            if match not in matched:
+                matched[match] = {
                     "discord_id": discord_id,
                     "discord_user": user,
                     "nickname": nick,
                     "match_type": match_type,
-                    "ambiguous": True
+                    "ambiguous": ambiguous
                 }
-                matched_rsn_set.add(m)
-        else:
-            matched[match] = {
-                "discord_id": discord_id,
-                "discord_user": user,
-                "nickname": nick,
-                "match_type": match_type,
-                "ambiguous": ambiguous
-            }
-            matched_rsn_set.add(match)
+                matched_rsn_set.add(match)
     else:
         unmatched.append({
             "discord_id": discord_id,
