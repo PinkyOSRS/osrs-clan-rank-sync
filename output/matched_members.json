@@ -62,6 +62,13 @@
     "match_type": "normalized_nickname",
     "ambiguous": false
   },
+  "yetarnished": {
+    "discord_id": "1113804710504321136",
+    "discord_user": ".slimysteak",
+    "nickname": "yetarnished",
+    "match_type": "normalized_nickname",
+    "ambiguous": false
+  },
   "Lionfish26": {
     "discord_id": "1096222230297464862",
     "discord_user": "lionfish26.",
@@ -76,6 +83,20 @@
     "match_type": "normalized_nickname",
     "ambiguous": false
   },
+  "Adiyama": {
+    "discord_id": "976525380389330974",
+    "discord_user": "shqueesh",
+    "nickname": "Adiyama",
+    "match_type": "normalized_nickname",
+    "ambiguous": false
+  },
+  "Flexxitr0n": {
+    "discord_id": "912590456926371922",
+    "discord_user": "adamhoriuchi",
+    "nickname": "Flexitr0n",
+    "match_type": "fuzzy_nickname",
+    "ambiguous": false
+  },
   "A M Y": {
     "discord_id": "841520062514462730",
     "discord_user": "amyhasakitty",
@@ -88,6 +109,27 @@
     "discord_user": "jbyw.",
     "nickname": "jbyw.",
     "match_type": "rsn_contains_nick",
+    "ambiguous": false
+  },
+  "Reegarded": {
+    "discord_id": "832408792389386240",
+    "discord_user": "longjohndick_weed",
+    "nickname": "Reegarded",
+    "match_type": "normalized_nickname",
+    "ambiguous": false
+  },
+  "KabouterHop": {
+    "discord_id": "798151243830263809",
+    "discord_user": ".flashball",
+    "nickname": "KouterHop",
+    "match_type": "fuzzy_nickname",
+    "ambiguous": false
+  },
+  "2202": {
+    "discord_id": "781642656563855380",
+    "discord_user": "purgatory66",
+    "nickname": "2202",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Mithod": {
@@ -132,6 +174,13 @@
     "match_type": "normalized_nickname",
     "ambiguous": false
   },
+  "oneilldude": {
+    "discord_id": "585908954362544128",
+    "discord_user": "saggytithes",
+    "nickname": "oneilldude/saggytithes",
+    "match_type": "nick_contains_rsn",
+    "ambiguous": false
+  },
   "Diredeath": {
     "discord_id": "577847167574867968",
     "discord_user": "diredruid",
@@ -146,10 +195,24 @@
     "match_type": "normalized_nickname",
     "ambiguous": false
   },
+  "Pus Sea Lips": {
+    "discord_id": "553986568378122242",
+    "discord_user": "upperkut6152",
+    "nickname": "Pus Sea Lips",
+    "match_type": "normalized_nickname",
+    "ambiguous": false
+  },
   "DreamyTug": {
     "discord_id": "541214236299362314",
     "discord_user": "theoutlawjosey",
     "nickname": "DreamyTug",
+    "match_type": "normalized_nickname",
+    "ambiguous": false
+  },
+  "Gadwall": {
+    "discord_id": "514366623247761418",
+    "discord_user": "titlest",
+    "nickname": "Gadwall",
     "match_type": "normalized_nickname",
     "ambiguous": false
   },
@@ -164,6 +227,13 @@
     "discord_id": "501121497625133058",
     "discord_user": ".yourmanace",
     "nickname": "Allaces16",
+    "match_type": "normalized_nickname",
+    "ambiguous": false
+  },
+  "AStonedLemur": {
+    "discord_id": "499688742853017611",
+    "discord_user": "abakedlemur",
+    "nickname": "AStonedLemur",
     "match_type": "normalized_nickname",
     "ambiguous": false
   },
@@ -279,6 +349,13 @@
     "match_type": "normalized_nickname",
     "ambiguous": false
   },
+  "Hairy Smegma": {
+    "discord_id": "332987899941355531",
+    "discord_user": "679alex",
+    "nickname": "Hairy Smegma",
+    "match_type": "normalized_nickname",
+    "ambiguous": false
+  },
   "Juanma99": {
     "discord_id": "332738988567691264",
     "discord_user": "juanma7465",
@@ -377,10 +454,24 @@
     "match_type": "fuzzy_nickname",
     "ambiguous": false
   },
+  "DocFrostwind": {
+    "discord_id": "198953095978418186",
+    "discord_user": "icefrostwind",
+    "nickname": "DocFrostwind",
+    "match_type": "normalized_nickname",
+    "ambiguous": false
+  },
   "Shmerek": {
     "discord_id": "197467741366648832",
     "discord_user": "shmerek",
     "nickname": "Shmerek",
+    "match_type": "normalized_nickname",
+    "ambiguous": false
+  },
+  "wedward": {
+    "discord_id": "193098585615761408",
+    "discord_user": "hugeladed",
+    "nickname": "Wedward",
     "match_type": "normalized_nickname",
     "ambiguous": false
   },
