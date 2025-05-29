@@ -82,7 +82,13 @@ for rsn, match_info in manual_matches.items():
     }
     matched_rsn_set.add(rsn)
 
+# === Skip already manually matched Discord IDs ===
+manually_matched_ids = {m["discord_id"] for m in matched.values()}
+
 for member in discord_members:
+    if member.get("ID") in manually_matched_ids:
+        continue
+
     if is_excluded(member):
         excluded.append({
             "discord_id": member.get("ID"),
