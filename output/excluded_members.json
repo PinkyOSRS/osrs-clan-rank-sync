@@ -1,1 +1,37 @@
-[]
+[
+  {
+    "discord_id": "674885857458651161",
+    "discord_user": "MemberList",
+    "nickname": "",
+    "status": "excluded",
+    "reason": "has excluded role"
+  },
+  {
+    "discord_id": "437618149505105920",
+    "discord_user": "EasyPoll",
+    "nickname": "",
+    "status": "excluded",
+    "reason": "has excluded role"
+  },
+  {
+    "discord_id": "277411676469592064",
+    "discord_user": "figgley",
+    "nickname": "",
+    "status": "excluded",
+    "reason": "has excluded role"
+  },
+  {
+    "discord_id": "272326798573043712",
+    "discord_user": "_chopss",
+    "nickname": "",
+    "status": "excluded",
+    "reason": "has excluded role"
+  },
+  {
+    "discord_id": "214171321532153856",
+    "discord_user": "kandarin",
+    "nickname": "",
+    "status": "excluded",
+    "reason": "has excluded role"
+  }
+]
