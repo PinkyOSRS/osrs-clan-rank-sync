@@ -2,6 +2,7 @@ import json
 import csv
 import os
 import subprocess
+import sys
 from pathlib import Path
 from difflib import SequenceMatcher
 
@@ -172,3 +173,5 @@ except subprocess.CalledProcessError as e:
 print(f"Matched: {len(matched)}")
 print(f"Unmatched Discord users: {len(unmatched)}")
 print(f"Unmatched RSNs: {len(unmatched_rsn)}")
+
+sys.exit(0)
