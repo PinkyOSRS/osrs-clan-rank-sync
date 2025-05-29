@@ -3,7 +3,8 @@ import glob
 import json
 
 UPLOADS_DIR = "uploads"
-OUTPUT_FILE = "latest_rsn_changes.json"
+OUTPUT_DIR = "output"
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, "latest_rsn_changes.json")
 
 def get_sorted_clanrank_files():
     files = glob.glob(os.path.join(UPLOADS_DIR, "clanrank_*.json"))
@@ -55,10 +56,13 @@ def main():
 
     renamed = compare_clan_files(newest_file, second_newest_file)
 
+    # Ensure output folder exists
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+
     # Write JSON output
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(renamed, f, indent=2)
-    
+
     print(f"Comparing:\n  Newest: {newest_file}\n  Older: {second_newest_file}")
     print(f"\n🔁 Detected {len(renamed)} likely RSN changes (saved to {OUTPUT_FILE}):")
 
