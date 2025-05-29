@@ -80,6 +80,8 @@ for rsn, match_info in manual_matches.items():
     }
     matched_rsn_set.add(rsn)
 
+manually_matched_ids = {info.get("discord_id") for info in manual_matches.values()}
+
 for member in discord_members:
     if is_excluded(member):
         excluded.append({
@@ -91,12 +93,15 @@ for member in discord_members:
         })
         continue
 
+    discord_id = member.get("ID")
+    if discord_id in manually_matched_ids:
+        continue
+
     user = member.get("User", "")
     nick = member.get("Nickname", "")
     if not nick:
-        print(f"[WARN] No nickname for user {user} ({member.get('ID')})")
+        print(f"[WARN] No nickname for user {user} ({discord_id})")
         nick = user
-    discord_id = member.get("ID")
 
     match = None
     match_type = None
