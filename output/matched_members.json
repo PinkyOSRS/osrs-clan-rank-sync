@@ -69,13 +69,6 @@
     "match_type": "normalized_nickname",
     "ambiguous": false
   },
-  "skatermatt91": {
-    "discord_id": "1132515468465426573",
-    "discord_user": "kitty.katrix",
-    "nickname": "Kate",
-    "match_type": "rsn_contains_nick",
-    "ambiguous": false
-  },
   "Hazardd17": {
     "discord_id": "1115735091700826112",
     "discord_user": "hazardd17",
