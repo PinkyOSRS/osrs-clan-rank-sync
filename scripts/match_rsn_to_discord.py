@@ -78,7 +78,9 @@ for rsn, match_info in manual_matches.items():
         "discord_user": match_info.get("discord_user"),
         "nickname": match_info.get("nickname"),
         "match_type": "manual",
-        "ambiguous": False
+        "ambiguous": False,
+        "rank": clan_data.get(rsn, {}).get("rank"),
+        "joinedDate": clan_data.get(rsn, {}).get("joinedDate")
     }
     matched_rsn_set.add(rsn)
 
@@ -179,7 +181,9 @@ for member in discord_members:
                         "discord_user": user,
                         "nickname": nick,
                         "match_type": match_type,
-                        "ambiguous": True
+                        "ambiguous": True,
+                        "rank": clan_data.get(m, {}).get("rank"),
+                        "joinedDate": clan_data.get(m, {}).get("joinedDate")
                     }
                     matched_rsn_set.add(m)
         else:
@@ -189,7 +193,9 @@ for member in discord_members:
                     "discord_user": user,
                     "nickname": nick,
                     "match_type": match_type,
-                    "ambiguous": ambiguous
+                    "ambiguous": ambiguous,
+                    "rank": clan_data.get(match, {}).get("rank"),
+                    "joinedDate": clan_data.get(match, {}).get("joinedDate")
                 }
                 matched_rsn_set.add(match)
     else:
