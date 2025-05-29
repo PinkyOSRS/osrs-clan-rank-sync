@@ -161,10 +161,13 @@ with open(unmatched_output, "w", encoding="utf-8") as f:
 with open(unmatched_rsn_output, "w", encoding="utf-8") as f:
     json.dump(unmatched_rsn, f, indent=2)
 
-# Commit changes to the repo
-subprocess.run(["git", "add", str(matched_output), str(unmatched_output), str(unmatched_rsn_output)])
-subprocess.run(["git", "commit", "-m", "Update RSN to Discord match results"])
-subprocess.run(["git", "push"])
+# Commit changes to the repo safely
+try:
+    subprocess.run(["git", "add", str(matched_output), str(unmatched_output), str(unmatched_rsn_output)], check=True)
+    subprocess.run(["git", "commit", "-m", "Update RSN to Discord match results"], check=True)
+    subprocess.run(["git", "push"], check=True)
+except subprocess.CalledProcessError as e:
+    print("Git subprocess failed:", e)
 
 print(f"Matched: {len(matched)}")
 print(f"Unmatched Discord users: {len(unmatched)}")
