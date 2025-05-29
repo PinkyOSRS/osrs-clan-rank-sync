@@ -1,8 +1,29 @@
 [
   {
+    "discord_id": "1377693069264031834",
+    "discord_user": "Memberlist2.0",
+    "nickname": "Memberlist2.0",
+    "status": "unmatched",
+    "reason": "no match"
+  },
+  {
     "discord_id": "1352721450808774706",
     "discord_user": "scottiemac_85906",
-    "nickname": "scottiemac_85906",
+    "nickname": "Scottie Mac",
+    "status": "unmatched",
+    "reason": "no match"
+  },
+  {
+    "discord_id": "674885857458651161",
+    "discord_user": "MemberList",
+    "nickname": "MemberList",
+    "status": "unmatched",
+    "reason": "no match"
+  },
+  {
+    "discord_id": "437618149505105920",
+    "discord_user": "EasyPoll",
+    "nickname": "EasyPoll",
     "status": "unmatched",
     "reason": "no match"
   },
@@ -10,6 +31,34 @@
     "discord_id": "364861187315335179",
     "discord_user": "scottiemac_",
     "nickname": "scottiemac_",
+    "status": "unmatched",
+    "reason": "no match"
+  },
+  {
+    "discord_id": "277411676469592064",
+    "discord_user": "figgley",
+    "nickname": "Figgle \u263f",
+    "status": "unmatched",
+    "reason": "no match"
+  },
+  {
+    "discord_id": "272326798573043712",
+    "discord_user": "_chopss",
+    "nickname": "_chopss",
+    "status": "unmatched",
+    "reason": "no match"
+  },
+  {
+    "discord_id": "214171321532153856",
+    "discord_user": "kandarin",
+    "nickname": "Kandarin",
+    "status": "unmatched",
+    "reason": "no match"
+  },
+  {
+    "discord_id": "179094769245356032",
+    "discord_user": "sassy.the.sasquatch",
+    "nickname": "Sassy The Sasquatch",
     "status": "unmatched",
     "reason": "no match"
   }
