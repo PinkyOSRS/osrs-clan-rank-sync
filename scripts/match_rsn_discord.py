@@ -12,6 +12,7 @@ clan_file = data_dir / "clan_ranks_for_bot.json"
 discord_file = data_dir / "discord_members.csv"
 matched_output = output_dir / "matched_members.json"
 unmatched_output = output_dir / "unmatched_members.json"
+unmatched_rsn_output = output_dir / "unmatched_rsn.json"
 
 # Load OSRS clan members
 with open(clan_file, "r", encoding="utf-8") as f:
@@ -22,20 +23,33 @@ discord_members = []
 with open(discord_file, "r", encoding="utf-8") as f:
     reader = csv.DictReader(f)
     for row in reader:
-        discord_members.append({
-            "user": row.get("User", "").strip(),
-            "id": row.get("ID", "").strip(),
-            "nickname": row.get("Nickname", "").strip()
-        })
+        discord_members.append(row)
+
+# Define excluded roles
+excluded_roles = {"EasyPoll", "MemberList", "Clan Guest"}
+
+def is_excluded(row):
+    return any(row.get(role, "").strip() for role in excluded_roles)
 
 matched = {}
 unmatched = []
 rsns = list(clan_data.keys())
+matched_rsn_set = set()
 
 for member in discord_members:
-    user = member["user"].lower()
-    nick = member["nickname"].lower() if member["nickname"] else ""
-    discord_id = member["id"]
+    if is_excluded(member):
+        unmatched.append({
+            "discord_id": member.get("ID"),
+            "discord_user": member.get("User"),
+            "nickname": member.get("Nickname"),
+            "status": "excluded",
+            "reason": "has excluded role"
+        })
+        continue
+
+    user = member.get("User", "").lower()
+    nick = member.get("Nickname", "").lower() if member.get("Nickname") else ""
+    discord_id = member.get("ID")
 
     match = None
     match_type = None
@@ -83,26 +97,35 @@ for member in discord_members:
             for m in match:
                 matched[m] = {
                     "discord_id": discord_id,
-                    "discord_user": member["user"],
-                    "nickname": member["nickname"],
+                    "discord_user": member.get("User"),
+                    "nickname": member.get("Nickname"),
                     "match_type": match_type,
                     "ambiguous": True
                 }
+                matched_rsn_set.add(m)
         else:
             matched[match] = {
                 "discord_id": discord_id,
-                "discord_user": member["user"],
-                "nickname": member["nickname"],
+                "discord_user": member.get("User"),
+                "nickname": member.get("Nickname"),
                 "match_type": match_type,
                 "ambiguous": ambiguous
             }
+            matched_rsn_set.add(match)
     else:
         unmatched.append({
             "discord_id": discord_id,
-            "discord_user": member["user"],
-            "nickname": member["nickname"],
+            "discord_user": member.get("User"),
+            "nickname": member.get("Nickname"),
+            "status": "unmatched",
             "reason": "no match"
         })
+
+# Determine RSNs with no matching Discord
+unmatched_rsn = [
+    {"rsn": rsn, "status": "unmatched", "reason": "no matching Discord account"}
+    for rsn in rsns if rsn not in matched_rsn_set
+]
 
 # Write results
 with open(matched_output, "w", encoding="utf-8") as f:
@@ -111,6 +134,9 @@ with open(matched_output, "w", encoding="utf-8") as f:
 with open(unmatched_output, "w", encoding="utf-8") as f:
     json.dump(unmatched, f, indent=2)
 
-print(f"Matched: {len(matched)}")
-print(f"Unmatched: {len(unmatched)}")
+with open(unmatched_rsn_output, "w", encoding="utf-8") as f:
+    json.dump(unmatched_rsn, f, indent=2)
 
+print(f"Matched: {len(matched)}")
+print(f"Unmatched Discord users: {len(unmatched)}")
+print(f"Unmatched RSNs: {len(unmatched_rsn)}")
