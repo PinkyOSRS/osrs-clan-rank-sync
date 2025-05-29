@@ -1,7 +1,9 @@
 import json
 import csv
 import os
+import subprocess
 from pathlib import Path
+from difflib import SequenceMatcher
 
 # Define input and output paths
 data_dir = Path("data")
@@ -30,6 +32,16 @@ excluded_roles = {"EasyPoll", "MemberList", "Clan Guest"}
 
 def is_excluded(row):
     return any(row.get(role, "").strip() for role in excluded_roles)
+
+def fuzzy_match(name, candidates, threshold=0.85):
+    best_score = 0
+    best_match = None
+    for candidate in candidates:
+        score = SequenceMatcher(None, name.lower(), candidate.lower()).ratio()
+        if score > best_score:
+            best_score = score
+            best_match = candidate
+    return best_match if best_score >= threshold else None
 
 matched = {}
 unmatched = []
@@ -92,6 +104,18 @@ for member in discord_members:
             match_type = "nick_contains_rsn"
             ambiguous = True
 
+    # Priority 5: Fuzzy match with nickname or username
+    if not match and nick:
+        fuzzy = fuzzy_match(nick, rsns)
+        if fuzzy:
+            match = fuzzy
+            match_type = "fuzzy_nickname"
+    if not match and user:
+        fuzzy = fuzzy_match(user, rsns)
+        if fuzzy:
+            match = fuzzy
+            match_type = "fuzzy_username"
+
     if match:
         if isinstance(match, list):
             for m in match:
@@ -136,6 +160,11 @@ with open(unmatched_output, "w", encoding="utf-8") as f:
 
 with open(unmatched_rsn_output, "w", encoding="utf-8") as f:
     json.dump(unmatched_rsn, f, indent=2)
+
+# Commit changes to the repo
+subprocess.run(["git", "add", str(matched_output), str(unmatched_output), str(unmatched_rsn_output)])
+subprocess.run(["git", "commit", "-m", "Update RSN to Discord match results"])
+subprocess.run(["git", "push"])
 
 print(f"Matched: {len(matched)}")
 print(f"Unmatched Discord users: {len(unmatched)}")
