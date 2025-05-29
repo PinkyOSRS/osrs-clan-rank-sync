@@ -27,6 +27,13 @@
     "match_type": "normalized_nickname",
     "ambiguous": false
   },
+  "AderoV": {
+    "discord_id": "1279394203528593438",
+    "discord_user": "aderov_97318",
+    "nickname": "aderov_97318",
+    "match_type": "nick_contains_rsn",
+    "ambiguous": false
+  },
   "Sea Of Boats": {
     "discord_id": "1212218077899395103",
     "discord_user": "jonathanhower",
@@ -51,15 +58,15 @@
   "Hazardd17": {
     "discord_id": "1115735091700826112",
     "discord_user": "hazardd17",
-    "nickname": "",
-    "match_type": "normalized_username",
+    "nickname": "hazardd17",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Lionfish26": {
     "discord_id": "1096222230297464862",
     "discord_user": "lionfish26.",
-    "nickname": "",
-    "match_type": "normalized_username",
+    "nickname": "lionfish26.",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "DavidTennant": {
@@ -69,11 +76,18 @@
     "match_type": "normalized_nickname",
     "ambiguous": false
   },
+  "A M Y": {
+    "discord_id": "841520062514462730",
+    "discord_user": "amyhasakitty",
+    "nickname": "amyhasakitty",
+    "match_type": "nick_contains_rsn",
+    "ambiguous": false
+  },
   "xJBYW": {
     "discord_id": "839005013837611081",
     "discord_user": "jbyw.",
-    "nickname": "",
-    "match_type": "fuzzy_username",
+    "nickname": "jbyw.",
+    "match_type": "rsn_contains_nick",
     "ambiguous": false
   },
   "Mithod": {
@@ -93,15 +107,15 @@
   "Bunnings BBQ": {
     "discord_id": "693669344571293706",
     "discord_user": "bunningsbbq",
-    "nickname": "",
-    "match_type": "normalized_username",
+    "nickname": "bunningsbbq",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "KlutchWhisky": {
     "discord_id": "665999274689167371",
     "discord_user": "klutchwhiskey",
-    "nickname": "",
-    "match_type": "fuzzy_username",
+    "nickname": "klutchwhiskey",
+    "match_type": "fuzzy_nickname",
     "ambiguous": false
   },
   "Honor Bones": {
@@ -128,8 +142,8 @@
   "trav50": {
     "discord_id": "570737938569101338",
     "discord_user": "trav50",
-    "nickname": "",
-    "match_type": "normalized_username",
+    "nickname": "trav50",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "DreamyTug": {
@@ -163,29 +177,29 @@
   "Jammy3542": {
     "discord_id": "474907526488391690",
     "discord_user": "jammy3542",
-    "nickname": "",
-    "match_type": "normalized_username",
+    "nickname": "jammy3542",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "TheGayFarmer": {
     "discord_id": "467094041708855296",
     "discord_user": "thegayfarmer",
-    "nickname": "",
-    "match_type": "normalized_username",
+    "nickname": "thegayfarmer",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Yung_Yames": {
     "discord_id": "454184256298811413",
     "discord_user": "yung_yames",
-    "nickname": "",
-    "match_type": "normalized_username",
+    "nickname": "yung_yames",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "iToo Lazy": {
     "discord_id": "423715539139952640",
     "discord_user": "itoolazy",
-    "nickname": "",
-    "match_type": "normalized_username",
+    "nickname": "itoolazy",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "KeanuReeves": {
@@ -230,6 +244,20 @@
     "match_type": "normalized_nickname",
     "ambiguous": false
   },
+  "EndGame Op": {
+    "discord_id": "372877878871719948",
+    "discord_user": "endgame_operator",
+    "nickname": "endgame_operator",
+    "match_type": "nick_contains_rsn",
+    "ambiguous": false
+  },
+  "Mr Clutch": {
+    "discord_id": "359504180282523648",
+    "discord_user": "arealmrclutch",
+    "nickname": "arealmrclutch",
+    "match_type": "nick_contains_rsn",
+    "ambiguous": false
+  },
   "Suplexed": {
     "discord_id": "357790918549700609",
     "discord_user": "zuckaborg",
@@ -268,15 +296,15 @@
   "Theoatrix": {
     "discord_id": "295422408813182976",
     "discord_user": "theoatrix",
-    "nickname": "",
-    "match_type": "normalized_username",
+    "nickname": "theoatrix",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "RottingSoul": {
     "discord_id": "290989992090664970",
     "discord_user": "rottingsoul_",
-    "nickname": "",
-    "match_type": "normalized_username",
+    "nickname": "rottingsoul_",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "FeMBOYFRlDAY": {
@@ -324,8 +352,8 @@
   "Nahanam": {
     "discord_id": "233670218675781642",
     "discord_user": "nahanam",
-    "nickname": "",
-    "match_type": "normalized_username",
+    "nickname": "nahanam",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Iron_Gweedz": {
@@ -345,8 +373,8 @@
   "Dariussy III": {
     "discord_id": "202523362633842688",
     "discord_user": "darius_iii",
-    "nickname": "",
-    "match_type": "fuzzy_username",
+    "nickname": "darius_iii",
+    "match_type": "fuzzy_nickname",
     "ambiguous": false
   },
   "Shmerek": {
@@ -398,6 +426,13 @@
     "match_type": "normalized_nickname",
     "ambiguous": false
   },
+  "QuakerOats": {
+    "discord_id": "154303752801615872",
+    "discord_user": "quakeroats2046",
+    "nickname": "quakeroats2046",
+    "match_type": "normalized_username",
+    "ambiguous": false
+  },
   "iPhone Game": {
     "discord_id": "153166443792302080",
     "discord_user": "iphonegame",
@@ -422,8 +457,8 @@
   "MendesuJP": {
     "discord_id": "122206899285262336",
     "discord_user": "mendesu",
-    "nickname": "",
-    "match_type": "fuzzy_username",
+    "nickname": "mendesu",
+    "match_type": "rsn_contains_nick",
     "ambiguous": false
   }
 }
