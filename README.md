@@ -1,0 +1,17 @@
+logic of this repo:
+
+uploads/ contains .json files uploaded by multiple admins of the OSRS clan through the runelite plugin "Clanmate Export" with the URL https://osrs-clan-rank-uploader.onrender.com/clanrank
+
+.github/workflows/process-clan-ranks.yml checks for newest upload in uploads/ and runs that most current memberlist through process_clan_ranks.py
+
+this creates a parsed output of the most up to date clanmember list under the URL https://raw.githubusercontent.com/PinkyOSRS/osrs-clan-rank-sync/main/clan_ranks_for_bot.json
+
+the formating of this list is:
+
+{
+  "EXAMPLE RSN": {
+    "rank": "EXAMPLE RANK",
+    "joinedDate": "EXAMPLE DATE"
+  },
+}
+
