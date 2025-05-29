@@ -20,6 +20,7 @@ discord_file = data_dir / "discord_members.csv"
 matched_output = output_dir / "matched_members.json"
 unmatched_output = output_dir / "unmatched_members.json"
 unmatched_rsn_output = output_dir / "unmatched_rsn.json"
+excluded_output = output_dir / "excluded_members.json"
 
 # Load OSRS clan members
 with open(clan_file, "r", encoding="utf-8") as f:
@@ -41,6 +42,9 @@ def is_excluded(row):
 def normalize(name):
     return re.sub(r'[^a-z0-9]', '', name.lower()) if name else ""
 
+def strip_suffix_digits(name):
+    return re.sub(r'\d{2,4}$', '', name)
+
 def fuzzy_match(name, candidates, threshold=0.85):
     best_score = 0
     best_match = None
@@ -53,13 +57,14 @@ def fuzzy_match(name, candidates, threshold=0.85):
 
 matched = {}
 unmatched = []
+excluded = []
 rsns = list(clan_data.keys())
 normalized_rsns = {normalize(rsn): rsn for rsn in rsns}
 matched_rsn_set = set()
 
 for member in discord_members:
     if is_excluded(member):
-        unmatched.append({
+        excluded.append({
             "discord_id": member.get("ID"),
             "discord_user": member.get("User"),
             "nickname": member.get("Nickname"),
@@ -70,6 +75,9 @@ for member in discord_members:
 
     user = member.get("User", "")
     nick = member.get("Nickname", "")
+    if not nick:
+        print(f"[WARN] No nickname for user {user} ({member.get('ID')})")
+        nick = user
     discord_id = member.get("ID")
 
     match = None
@@ -77,7 +85,8 @@ for member in discord_members:
     ambiguous = False
 
     # Normalize all inputs
-    norm_user = normalize(user)
+    stripped_user = strip_suffix_digits(user)
+    norm_user = normalize(stripped_user)
     norm_nick = normalize(nick)
 
     # Priority 1: normalized match with nickname
@@ -112,17 +121,35 @@ for member in discord_members:
             match_type = "nick_contains_rsn"
             ambiguous = True
 
+    # Priority 4.5: Discord user contains RSN (normalized)
+    if not match and norm_user:
+        candidates = [rsn for rsn in rsns if normalize(rsn) in norm_user]
+        if len(candidates) == 1:
+            match = candidates[0]
+            match_type = "user_contains_rsn"
+        elif len(candidates) > 1:
+            match = candidates
+            match_type = "user_contains_rsn"
+            ambiguous = True
+
     # Priority 5: Fuzzy match with normalized nickname or username
     if not match and norm_nick:
         fuzzy = fuzzy_match(norm_nick, [normalize(rsn) for rsn in rsns])
-        if fuzzy and fuzzy in normalized_rsns:
-            match = normalized_rsns[fuzzy]
-            match_type = "fuzzy_nickname"
+        if fuzzy:
+            for norm_key, original_rsn in normalized_rsns.items():
+                if normalize(norm_key) == fuzzy:
+                    match = original_rsn
+                    match_type = "fuzzy_nickname"
+                    break
+
     if not match and norm_user:
         fuzzy = fuzzy_match(norm_user, [normalize(rsn) for rsn in rsns])
-        if fuzzy and fuzzy in normalized_rsns:
-            match = normalized_rsns[fuzzy]
-            match_type = "fuzzy_username"
+        if fuzzy:
+            for norm_key, original_rsn in normalized_rsns.items():
+                if normalize(norm_key) == fuzzy:
+                    match = original_rsn
+                    match_type = "fuzzy_username"
+                    break
 
     if match:
         if isinstance(match, list):
@@ -169,9 +196,12 @@ with open(unmatched_output, "w", encoding="utf-8") as f:
 with open(unmatched_rsn_output, "w", encoding="utf-8") as f:
     json.dump(unmatched_rsn, f, indent=2)
 
+with open(excluded_output, "w", encoding="utf-8") as f:
+    json.dump(excluded, f, indent=2)
+
 # Commit changes to the repo safely
 try:
-    subprocess.run(["git", "add", str(matched_output), str(unmatched_output), str(unmatched_rsn_output)], check=False)
+    subprocess.run(["git", "add", str(matched_output), str(unmatched_output), str(unmatched_rsn_output), str(excluded_output)], check=False)
     subprocess.run(["git", "commit", "-m", "Update RSN to Discord match results"], check=False)
     subprocess.run(["git", "push"], check=False)
 except Exception as e:
@@ -180,5 +210,6 @@ except Exception as e:
 print(f"Matched: {len(matched)}")
 print(f"Unmatched Discord users: {len(unmatched)}")
 print(f"Unmatched RSNs: {len(unmatched_rsn)}")
+print(f"Excluded Discord users: {len(excluded)}")
 print("[DEBUG] Script finished. Exiting.")
 sys.exit(0)
