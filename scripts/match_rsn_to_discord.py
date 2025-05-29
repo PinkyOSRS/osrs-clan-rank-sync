@@ -44,7 +44,9 @@ if manually_matched_file.exists():
 excluded_roles = {"EasyPoll", "MemberList", "Clan Guest"}
 
 def is_excluded(row):
-    return any(row.get(role, "").strip() for role in excluded_roles)
+    roles_raw = row.get("Roles", "")
+    roles = {r.strip() for r in roles_raw.split(",") if r.strip()}
+    return bool(excluded_roles & roles)
 
 def normalize(name):
     return re.sub(r'[^a-z0-9]', '', name.lower()) if name else ""
