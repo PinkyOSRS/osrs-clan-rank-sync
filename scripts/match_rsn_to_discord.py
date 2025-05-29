@@ -6,12 +6,15 @@ import sys
 from pathlib import Path
 from difflib import SequenceMatcher
 
+print("[DEBUG] Script started...")
+
 # Define input and output paths
 data_dir = Path("data")
 output_dir = Path("output")
 output_dir.mkdir(exist_ok=True)
 
-clan_file = data_dir / "clan_ranks_for_bot.json"
+# Adjusted path: clan file is in root directory
+clan_file = Path("clan_ranks_for_bot.json")
 discord_file = data_dir / "discord_members.csv"
 matched_output = output_dir / "matched_members.json"
 unmatched_output = output_dir / "unmatched_members.json"
@@ -164,14 +167,14 @@ with open(unmatched_rsn_output, "w", encoding="utf-8") as f:
 
 # Commit changes to the repo safely
 try:
-    subprocess.run(["git", "add", str(matched_output), str(unmatched_output), str(unmatched_rsn_output)], check=True)
-    subprocess.run(["git", "commit", "-m", "Update RSN to Discord match results"], check=True)
-    subprocess.run(["git", "push"], check=True)
-except subprocess.CalledProcessError as e:
+    subprocess.run(["git", "add", str(matched_output), str(unmatched_output), str(unmatched_rsn_output)], check=False)
+    subprocess.run(["git", "commit", "-m", "Update RSN to Discord match results"], check=False)
+    subprocess.run(["git", "push"], check=False)
+except Exception as e:
     print("Git subprocess failed:", e)
 
 print(f"Matched: {len(matched)}")
 print(f"Unmatched Discord users: {len(unmatched)}")
 print(f"Unmatched RSNs: {len(unmatched_rsn)}")
-
+print("[DEBUG] Script finished. Exiting.")
 sys.exit(0)
