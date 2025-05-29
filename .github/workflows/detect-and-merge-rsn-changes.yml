@@ -2,7 +2,7 @@ name: Detect and Merge RSN Changes
 
 on:
   workflow_run:
-    workflows: ["Process Clan Ranks"]
+    workflows: ["Match RSNs to Discord"]
     types:
       - completed
 
