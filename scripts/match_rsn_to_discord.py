@@ -41,7 +41,7 @@ if manually_matched_file.exists():
         manual_matches = json.load(f)
 
 # Define excluded roles
-excluded_roles = {"EasyPoll", "MemberList", "Clan Guest", "MemberList2.0"}
+excluded_roles = {"EasyPoll", "MemberList", "Clan Guest", "Memberlist2.0"}
 
 def is_excluded(row):
     roles_raw = row.get("Roles", "")
