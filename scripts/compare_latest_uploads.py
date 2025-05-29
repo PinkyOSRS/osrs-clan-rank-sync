@@ -23,7 +23,7 @@ def compare_clan_files(newest_file, older_file):
     joined = new_set - old_set
     left = old_set - new_set
 
-    # Index joined and left by join date
+    # Index by joinedDate
     joined_by_date = {}
     for rsn, jd in joined:
         joined_by_date.setdefault(jd, []).append(rsn)
@@ -34,13 +34,12 @@ def compare_clan_files(newest_file, older_file):
 
     renamed = []
     for jd in joined_by_date.keys() & left_by_date.keys():
-        for old_rsn in left_by_date[jd]:
-            for new_rsn in joined_by_date[jd]:
-                renamed.append({
-                    "joinedDate": jd,
-                    "old_rsn": old_rsn,
-                    "new_rsn": new_rsn
-                })
+        if len(joined_by_date[jd]) == 1 and len(left_by_date[jd]) == 1:
+            renamed.append({
+                "joinedDate": jd,
+                "old_rsn": left_by_date[jd][0],
+                "new_rsn": joined_by_date[jd][0]
+            })
 
     return renamed
 
@@ -57,7 +56,7 @@ def main():
 
     print(f"Comparing:\n  Newest: {newest_file}\n  Older: {second_newest_file}\n")
 
-    print("\n🔁 Likely RSN Changes:")
+    print("\n🔁 Likely 1:1 RSN Changes:")
     if not renamed:
         print("  None detected.")
     else:
