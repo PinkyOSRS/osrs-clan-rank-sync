@@ -3,6 +3,7 @@ import csv
 import os
 import subprocess
 import sys
+import re
 from pathlib import Path
 from difflib import SequenceMatcher
 
@@ -37,6 +38,9 @@ excluded_roles = {"EasyPoll", "MemberList", "Clan Guest"}
 def is_excluded(row):
     return any(row.get(role, "").strip() for role in excluded_roles)
 
+def normalize(name):
+    return re.sub(r'[^a-z0-9]', '', name.lower()) if name else ""
+
 def fuzzy_match(name, candidates, threshold=0.85):
     best_score = 0
     best_match = None
@@ -50,6 +54,7 @@ def fuzzy_match(name, candidates, threshold=0.85):
 matched = {}
 unmatched = []
 rsns = list(clan_data.keys())
+normalized_rsns = {normalize(rsn): rsn for rsn in rsns}
 matched_rsn_set = set()
 
 for member in discord_members:
@@ -63,32 +68,31 @@ for member in discord_members:
         })
         continue
 
-    user = member.get("User", "").lower()
-    nick = member.get("Nickname", "").lower() if member.get("Nickname") else ""
+    user = member.get("User", "")
+    nick = member.get("Nickname", "")
     discord_id = member.get("ID")
 
     match = None
     match_type = None
     ambiguous = False
 
-    # Priority 1: exact match with nickname
-    for rsn in rsns:
-        if nick and rsn.lower() == nick:
-            match = rsn
-            match_type = "exact_nickname"
-            break
+    # Normalize all inputs
+    norm_user = normalize(user)
+    norm_nick = normalize(nick)
 
-    # Priority 2: exact match with username
-    if not match:
-        for rsn in rsns:
-            if rsn.lower() == user:
-                match = rsn
-                match_type = "exact_username"
-                break
+    # Priority 1: normalized match with nickname
+    if norm_nick in normalized_rsns:
+        match = normalized_rsns[norm_nick]
+        match_type = "normalized_nickname"
 
-    # Priority 3: RSN contains nickname
-    if not match and nick:
-        candidates = [rsn for rsn in rsns if nick in rsn.lower()]
+    # Priority 2: normalized match with username
+    if not match and norm_user in normalized_rsns:
+        match = normalized_rsns[norm_user]
+        match_type = "normalized_username"
+
+    # Priority 3: RSN contains nickname (normalized)
+    if not match and norm_nick:
+        candidates = [rsn for rsn in rsns if norm_nick in normalize(rsn)]
         if len(candidates) == 1:
             match = candidates[0]
             match_type = "rsn_contains_nick"
@@ -97,9 +101,9 @@ for member in discord_members:
             match_type = "rsn_contains_nick"
             ambiguous = True
 
-    # Priority 4: Nickname contains RSN
-    if not match and nick:
-        candidates = [rsn for rsn in rsns if rsn.lower() in nick]
+    # Priority 4: Nickname contains RSN (normalized)
+    if not match and norm_nick:
+        candidates = [rsn for rsn in rsns if normalize(rsn) in norm_nick]
         if len(candidates) == 1:
             match = candidates[0]
             match_type = "nick_contains_rsn"
@@ -108,16 +112,16 @@ for member in discord_members:
             match_type = "nick_contains_rsn"
             ambiguous = True
 
-    # Priority 5: Fuzzy match with nickname or username
-    if not match and nick:
-        fuzzy = fuzzy_match(nick, rsns)
-        if fuzzy:
-            match = fuzzy
+    # Priority 5: Fuzzy match with normalized nickname or username
+    if not match and norm_nick:
+        fuzzy = fuzzy_match(norm_nick, [normalize(rsn) for rsn in rsns])
+        if fuzzy and fuzzy in normalized_rsns:
+            match = normalized_rsns[fuzzy]
             match_type = "fuzzy_nickname"
-    if not match and user:
-        fuzzy = fuzzy_match(user, rsns)
-        if fuzzy:
-            match = fuzzy
+    if not match and norm_user:
+        fuzzy = fuzzy_match(norm_user, [normalize(rsn) for rsn in rsns])
+        if fuzzy and fuzzy in normalized_rsns:
+            match = normalized_rsns[fuzzy]
             match_type = "fuzzy_username"
 
     if match:
@@ -125,8 +129,8 @@ for member in discord_members:
             for m in match:
                 matched[m] = {
                     "discord_id": discord_id,
-                    "discord_user": member.get("User"),
-                    "nickname": member.get("Nickname"),
+                    "discord_user": user,
+                    "nickname": nick,
                     "match_type": match_type,
                     "ambiguous": True
                 }
@@ -134,8 +138,8 @@ for member in discord_members:
         else:
             matched[match] = {
                 "discord_id": discord_id,
-                "discord_user": member.get("User"),
-                "nickname": member.get("Nickname"),
+                "discord_user": user,
+                "nickname": nick,
                 "match_type": match_type,
                 "ambiguous": ambiguous
             }
@@ -143,8 +147,8 @@ for member in discord_members:
     else:
         unmatched.append({
             "discord_id": discord_id,
-            "discord_user": member.get("User"),
-            "nickname": member.get("Nickname"),
+            "discord_user": user,
+            "nickname": nick,
             "status": "unmatched",
             "reason": "no match"
         })
