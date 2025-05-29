@@ -1,12 +1,5 @@
 [
   {
-    "discord_id": "1357022117681430821",
-    "discord_user": "ryker048",
-    "nickname": "04-8",
-    "status": "unmatched",
-    "reason": "no match"
-  },
-  {
     "discord_id": "1352721450808774706",
     "discord_user": "scottiemac_85906",
     "nickname": "",
@@ -51,13 +44,6 @@
   {
     "discord_id": "841520062514462730",
     "discord_user": "amyhasakitty",
-    "nickname": "",
-    "status": "unmatched",
-    "reason": "no match"
-  },
-  {
-    "discord_id": "839005013837611081",
-    "discord_user": "jbyw.",
     "nickname": "",
     "status": "unmatched",
     "reason": "no match"
@@ -159,13 +145,6 @@
     "nickname": "",
     "status": "excluded",
     "reason": "has excluded role"
-  },
-  {
-    "discord_id": "202523362633842688",
-    "discord_user": "darius_iii",
-    "nickname": "",
-    "status": "unmatched",
-    "reason": "no match"
   },
   {
     "discord_id": "198953095978418186",

@@ -3,84 +3,98 @@
     "discord_id": "1362482108190425250",
     "discord_user": "fleshloaf_78269",
     "nickname": "fxck osrs",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
+    "ambiguous": false
+  },
+  "04 8": {
+    "discord_id": "1357022117681430821",
+    "discord_user": "ryker048",
+    "nickname": "04-8",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Aqua Angler": {
     "discord_id": "1291523917634076713",
     "discord_user": "viking240702",
     "nickname": "Aqua Angler",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Jenna1115": {
     "discord_id": "1289783520016859218",
     "discord_user": "jennay_37286",
     "nickname": "Jenna1115",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Sea Of Boats": {
     "discord_id": "1212218077899395103",
     "discord_user": "jonathanhower",
     "nickname": "Sea of Boats",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "RaysCyste": {
     "discord_id": "1183207805876965436",
     "discord_user": "molais.anti",
     "nickname": "RaysCyste",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Runeashes814": {
     "discord_id": "1179830788078968893",
     "discord_user": "hielke25",
     "nickname": "runeashes814",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Hazardd17": {
     "discord_id": "1115735091700826112",
     "discord_user": "hazardd17",
     "nickname": "",
-    "match_type": "exact_username",
+    "match_type": "normalized_username",
     "ambiguous": false
   },
   "Lionfish26": {
     "discord_id": "1096222230297464862",
     "discord_user": "lionfish26.",
     "nickname": "",
-    "match_type": "fuzzy_username",
+    "match_type": "normalized_username",
     "ambiguous": false
   },
   "DavidTennant": {
     "discord_id": "1024431692750004245",
     "discord_user": "jughead_iii",
     "nickname": "DavidTennant",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
+    "ambiguous": false
+  },
+  "xJBYW": {
+    "discord_id": "839005013837611081",
+    "discord_user": "jbyw.",
+    "nickname": "",
+    "match_type": "fuzzy_username",
     "ambiguous": false
   },
   "Mithod": {
     "discord_id": "776139303360397312",
     "discord_user": "_sarvo",
     "nickname": "Mithod",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Jjx Duel": {
     "discord_id": "734551508867219507",
     "discord_user": "mph615",
     "nickname": "JJX Duel",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Bunnings BBQ": {
     "discord_id": "693669344571293706",
     "discord_user": "bunningsbbq",
     "nickname": "",
-    "match_type": "fuzzy_username",
+    "match_type": "normalized_username",
     "ambiguous": false
   },
   "KlutchWhisky": {
@@ -101,42 +115,42 @@
     "discord_id": "606748441665601568",
     "discord_user": "paxisagod",
     "nickname": "MrFire",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Diredeath": {
     "discord_id": "577847167574867968",
     "discord_user": "diredruid",
     "nickname": "Diredeath",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "trav50": {
     "discord_id": "570737938569101338",
     "discord_user": "trav50",
     "nickname": "",
-    "match_type": "exact_username",
+    "match_type": "normalized_username",
     "ambiguous": false
   },
   "DreamyTug": {
     "discord_id": "541214236299362314",
     "discord_user": "theoutlawjosey",
     "nickname": "DreamyTug",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Lordosis": {
     "discord_id": "509503848688386058",
     "discord_user": "ibwick",
     "nickname": "Lordosis",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Allaces16": {
     "discord_id": "501121497625133058",
     "discord_user": ".yourmanace",
     "nickname": "Allaces16",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "HatsneFreaku": {
@@ -150,77 +164,77 @@
     "discord_id": "474907526488391690",
     "discord_user": "jammy3542",
     "nickname": "",
-    "match_type": "exact_username",
+    "match_type": "normalized_username",
     "ambiguous": false
   },
   "TheGayFarmer": {
     "discord_id": "467094041708855296",
     "discord_user": "thegayfarmer",
     "nickname": "",
-    "match_type": "exact_username",
+    "match_type": "normalized_username",
     "ambiguous": false
   },
   "Yung_Yames": {
     "discord_id": "454184256298811413",
     "discord_user": "yung_yames",
     "nickname": "",
-    "match_type": "exact_username",
+    "match_type": "normalized_username",
     "ambiguous": false
   },
   "iToo Lazy": {
     "discord_id": "423715539139952640",
     "discord_user": "itoolazy",
     "nickname": "",
-    "match_type": "fuzzy_username",
+    "match_type": "normalized_username",
     "ambiguous": false
   },
   "KeanuReeves": {
     "discord_id": "420760665133678592",
     "discord_user": "buzzlite",
     "nickname": "KeanuReeves",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Epic OSRS": {
     "discord_id": "411901747989053444",
     "discord_user": "_almostepic",
     "nickname": "-Epic OSRS",
-    "match_type": "nick_contains_rsn",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Xion DontDie": {
     "discord_id": "392248587381243906",
     "discord_user": "xioncunt",
     "nickname": "Xion DontDie",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Frog Warfare": {
     "discord_id": "385223480955633675",
     "discord_user": "hamborgors",
     "nickname": "Frog Warfare",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Sniithy": {
     "discord_id": "384822644106854400",
     "discord_user": "mesocortical",
     "nickname": "Sniithy",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "xBAUSSx": {
     "discord_id": "381002977260994560",
     "discord_user": "1nonlybauss",
     "nickname": "xBAUSSx",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Suplexed": {
     "discord_id": "357790918549700609",
     "discord_user": "zuckaborg",
     "nickname": "Suplexed",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "lPisces": {
@@ -234,35 +248,35 @@
     "discord_id": "336525290928996352",
     "discord_user": "dskid5105",
     "nickname": "The Deadshot",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Juanma99": {
     "discord_id": "332738988567691264",
     "discord_user": "juanma7465",
     "nickname": "Juanma99",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "vippaa20e": {
     "discord_id": "318066383089041408",
     "discord_user": "artsi5737",
     "nickname": "Vippaa20e",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Theoatrix": {
     "discord_id": "295422408813182976",
     "discord_user": "theoatrix",
     "nickname": "",
-    "match_type": "exact_username",
+    "match_type": "normalized_username",
     "ambiguous": false
   },
   "RottingSoul": {
     "discord_id": "290989992090664970",
     "discord_user": "rottingsoul_",
     "nickname": "",
-    "match_type": "fuzzy_username",
+    "match_type": "normalized_username",
     "ambiguous": false
   },
   "FeMBOYFRlDAY": {
@@ -276,21 +290,21 @@
     "discord_id": "273862889469640704",
     "discord_user": "5b5b5b",
     "nickname": "Waylo",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Mastaejx": {
     "discord_id": "269897750097690624",
     "discord_user": "chromedd",
     "nickname": "Mastaejx",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "NPC_CRY": {
     "discord_id": "269637826038071307",
     "discord_user": "its_yeet_or_get_yeeted",
     "nickname": "NPC_CRY",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Pinky Logged": {
@@ -311,91 +325,98 @@
     "discord_id": "233670218675781642",
     "discord_user": "nahanam",
     "nickname": "",
-    "match_type": "exact_username",
+    "match_type": "normalized_username",
     "ambiguous": false
   },
   "Iron_Gweedz": {
     "discord_id": "221360322504556544",
     "discord_user": "gweedz",
     "nickname": "Iron Gweedz",
-    "match_type": "fuzzy_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "A Y R U N": {
     "discord_id": "218021269419982848",
     "discord_user": "aar.on",
     "nickname": "A Y R U N",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
+    "ambiguous": false
+  },
+  "Dariussy III": {
+    "discord_id": "202523362633842688",
+    "discord_user": "darius_iii",
+    "nickname": "",
+    "match_type": "fuzzy_username",
     "ambiguous": false
   },
   "Shmerek": {
     "discord_id": "197467741366648832",
     "discord_user": "shmerek",
     "nickname": "Shmerek",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "WestSpirit": {
     "discord_id": "180681778544115712",
     "discord_user": "bhkindle",
     "nickname": "WestSpirit",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "dno022599": {
     "discord_id": "168833898040524801",
     "discord_user": "dno0225",
     "nickname": "dno022599",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "ValorantPro1": {
     "discord_id": "167196179430375425",
     "discord_user": "steez97",
     "nickname": "ValorantPro1",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "KingLadyBoy": {
     "discord_id": "166224400738156544",
     "discord_user": "jamesisdabest",
     "nickname": "KingLadyBoy",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Soulripe": {
     "discord_id": "165172330669146114",
     "discord_user": "dr.dr511",
     "nickname": "Soulripe",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Cryosys": {
     "discord_id": "163071050421108736",
     "discord_user": "arctic720",
     "nickname": "Cryosys",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "iPhone Game": {
     "discord_id": "153166443792302080",
     "discord_user": "iphonegame",
     "nickname": "iPhone Game",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Sooner L8R": {
     "discord_id": "141021708416057345",
     "discord_user": "deuxexile",
     "nickname": "Sooner L8R",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "Spencejliv": {
     "discord_id": "139070581130657792",
     "discord_user": "spenny12_",
     "nickname": "Spencejliv",
-    "match_type": "exact_nickname",
+    "match_type": "normalized_nickname",
     "ambiguous": false
   },
   "MendesuJP": {
