@@ -1,0 +1,42 @@
+name: Detect and Merge RSN Changes
+
+on:
+  workflow_run:
+    workflows: ["Process Clan Ranks"]
+    types:
+      - completed
+
+jobs:
+  detect-renames:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Compare latest clan rank uploads
+        run: python scripts/compare_latest_uploads.py
+
+      - name: Detect renamed RSNs
+        run: python scripts/update_matched_members.py
+
+      - name: Merge renamed RSNs into matched_members.json
+        run: python scripts/merge_matched_members.py
+
+      - name: Commit updated matched_members.json
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add output/matched_members.json
+          git commit -m "Merged renamed RSNs into matched_members.json"
+          git push
