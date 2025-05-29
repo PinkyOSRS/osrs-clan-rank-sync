@@ -1,0 +1,16 @@
+name: Trigger Discord Export
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # Every day at 12:00 UTC
+  workflow_dispatch:      # allows manual trigger from GitHub UI
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Call Discord export endpoint
+        run: |
+          curl -X POST https://osrs-discord-export.onrender.com/export
+
