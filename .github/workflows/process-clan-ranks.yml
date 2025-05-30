@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'uploads/**'
-  workflow_dispatch:  # Allows manual triggering
+  workflow_dispatch:
 
 jobs:
   process-clan-ranks:
@@ -27,12 +27,25 @@ jobs:
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
 
-          # Pull first to avoid conflicts from concurrent pushes
-          git pull origin main --rebase
-
-          # Add the file and check for changes
+          # Stage the file
           git add clan_ranks_for_bot.json
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update clan ranks from latest upload"
 
-          # Push changes
-          git push
+          # Check if anything changed
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          # Stash everything just in case
+          git stash --include-untracked
+
+          # Pull remote changes cleanly
+          git pull origin main --rebase || git rebase --abort
+
+          # Reapply local changes (if any)
+          git stash pop || true
+
+          # Add and commit again after rebase
+          git add clan_ranks_for_bot.json
+          git commit -m "Update clan ranks from latest upload"
+          git push origin main
