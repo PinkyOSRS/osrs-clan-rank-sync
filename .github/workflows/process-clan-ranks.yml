@@ -21,11 +21,12 @@ jobs:
       - name: Process latest clan rank file
         run: |
           python process_clan_ranks.py
-          
+
       - name: Commit and push if changed
         run: |
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
+          git pull origin main --rebase  # ✅ ensure the latest commit is fetched
           git add clan_ranks_for_bot.json
           git diff --quiet && git diff --staged --quiet || git commit -m "Update clan ranks from latest upload"
           git push
