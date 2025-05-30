@@ -34,13 +34,16 @@ jobs:
           fi
           python scripts/update_matched_members.py
 
-      - name: Git commit and push (if changes)
-        run: |
+           - name: Git commit and push (if changes)
+          run: |
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
+
           git stash --include-untracked || true
           git pull origin main --rebase || true
           git stash pop || true
-          git add clan_ranks_for_bot.json output/updated_matched_members.json matched_members.json || true
+
+          git add clan_ranks_for_bot.json output/*.json || true
           git diff --quiet && git diff --staged --quiet || git commit -m "Full sync update"
           git push || echo "Nothing to push or push failed (may be up-to-date)"
+
