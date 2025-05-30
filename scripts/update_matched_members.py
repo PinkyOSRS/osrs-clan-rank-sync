@@ -5,6 +5,11 @@ INPUT_MATCHED_FILE = "output/matched_members.json"
 INPUT_RENAMES_FILE = "output/latest_rsn_changes.json"
 OUTPUT_UPDATED_FILE = "output/updated_matched_members.json"
 
+# Exit early if latest_rsn_changes.json is missing or empty
+if not os.path.isfile(INPUT_RENAMES_FILE) or os.path.getsize(INPUT_RENAMES_FILE) == 0:
+    print("ℹ️ No RSN changes to process. File is missing or empty.")
+    exit(0)
+
 # Load matched_members.json
 with open(INPUT_MATCHED_FILE, "r", encoding="utf-8") as f:
     matched_members = json.load(f)
