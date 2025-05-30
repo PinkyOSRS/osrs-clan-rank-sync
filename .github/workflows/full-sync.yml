@@ -1,7 +1,5 @@
 name: Full Clan Sync
 
-description: End-to-end workflow for processing new clanrank uploads, matching RSNs to Discord, and detecting RSN changes
-
 on:
   workflow_dispatch:
   push:
@@ -41,12 +39,10 @@ jobs:
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
 
-          # Stash local changes before pulling remote commits
           git stash --include-untracked || true
           git pull origin main --rebase || true
           git stash pop || true
 
-          # Stage and commit any changes
           git add clan_ranks_for_bot.json output/*.json || true
           git diff --quiet && git diff --staged --quiet || git commit -m "Full sync update"
           git push || echo "Nothing to push or push failed (may be up-to-date)"
