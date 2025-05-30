@@ -29,12 +29,12 @@ jobs:
           python scripts/match_rsn_to_discord.py
 
       - name: Detect and merge RSN changes
-        run: |
-          if [ ! -s output/rsn_changes.json ]; then
-            echo "No RSN changes detected or rsn_changes.json is missing/empty. Skipping update."
-            exit 0
-          fi
-          python scripts/update_matched_members.py
+  run: |
+    if [ ! -s output/latest_rsn_changes.json ]; then
+      echo "No RSN changes detected or latest_rsn_changes.json is missing/empty. Skipping update."
+      exit 0
+    fi
+    python scripts/update_matched_members.py
 
       - name: Git commit and push (if changes)
         run: |
