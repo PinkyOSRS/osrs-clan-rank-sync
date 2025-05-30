@@ -27,6 +27,7 @@ jobs:
           python scripts/match_rsn_to_discord.py
 
       - name: Detect and merge RSN changes
+        shell: bash
         run: |
           if [ ! -s output/latest_rsn_changes.json ]; then
             echo "🟡 No RSN changes to process."
