@@ -19,10 +19,12 @@ jobs:
           python-version: '3.x'
 
       - name: Process latest clan rank file
-        run: python process_clan_ranks.py
+        run: |
+          python process_clan_ranks.py
 
       - name: Match RSNs to Discord
-        run: python scripts/match_rsn_to_discord.py
+        run: |
+          python scripts/match_rsn_to_discord.py
 
       - name: Detect and merge RSN changes
         run: |
@@ -34,8 +36,8 @@ jobs:
 
       - name: Git commit and push (if changes)
         run: |
-          git config --global user.name "GitHub Actions Bot"
-          git config --global user.email "actions@github.com"
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
 
           git stash --include-untracked || true
           git pull origin main --rebase || true
