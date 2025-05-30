@@ -30,12 +30,18 @@ jobs:
         shell: bash
         run: |
           if [ ! -s output/latest_rsn_changes.json ]; then
-            echo "🟡 No RSN changes to process."
+            echo "🟡 No RSN changes to process (missing or empty file)."
             exit 0
-          else
-            echo "✅ Detected RSN changes. Processing..."
-            python scripts/update_matched_members.py
           fi
+
+          echo "✅ Detected RSN changes. Checking file content..."
+
+          if ! python -c "import json; json.load(open('output/latest_rsn_changes.json'))" 2>/dev/null; then
+            echo "⚠️ File is not valid JSON. Skipping update."
+            exit 0
+          fi
+
+          python scripts/update_matched_members.py
 
       - name: Git commit and push (if changes)
         run: |
