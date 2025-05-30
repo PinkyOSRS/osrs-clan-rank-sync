@@ -1,44 +1,54 @@
-name: Full Clan Sync
+import os
+import json
 
-on:
-  workflow_dispatch:
-  push:
-    paths:
-      - 'uploads/**'
+INPUT_MATCHED_FILE = "output/matched_members.json"
+INPUT_RENAMES_FILE = "output/latest_rsn_changes.json"
+OUTPUT_UPDATED_FILE = "output/updated_matched_members.json"
 
-jobs:
-  full-sync:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+# ✅ Prevent crash if the RSN changes file is missing or empty
+if not os.path.isfile(INPUT_RENAMES_FILE) or os.path.getsize(INPUT_RENAMES_FILE) == 0:
+    print("ℹ️ No RSN changes to process. File is missing or empty.")
+    exit(0)
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
+# Load matched_members.json
+with open(INPUT_MATCHED_FILE, "r", encoding="utf-8") as f:
+    matched_members = json.load(f)
 
-      - name: Process latest clan rank file
-        run: |
-          python process_clan_ranks.py
+# Load latest_rsn_changes.json
+with open(INPUT_RENAMES_FILE, "r", encoding="utf-8") as f:
+    rsn_changes = json.load(f)
 
-      - name: Match RSNs to Discord
-        run: |
-          python scripts/match_rsn_to_discord.py
+# Build index: joinedDate -> old RSN
+joined_date_lookup = {}
+for rsn, info in matched_members.items():
+    joined = info.get("joinedDate")
+    if joined:
+        joined_date_lookup.setdefault(joined, {})[rsn] = info
 
-      - name: Detect and merge RSN changes
-        run: |
-          python scripts/update_matched_members.py
+# Create new mapping for renamed RSNs
+updated_matches = {}
+unmatched_renames = []
 
-      - name: Git commit and push (if changes)
-        run: |
-          git config --global user.name 'GitHub Actions Bot'
-          git config --global user.email 'actions@github.com'
+for entry in rsn_changes:
+    old_rsn = entry["old_rsn"]
+    new_rsn = entry["new_rsn"]
+    joined_date = entry["joinedDate"]
 
-          git stash --include-untracked || true
-          git pull origin main --rebase || true
-          git stash pop || true
+    match_info = joined_date_lookup.get(joined_date, {}).get(old_rsn)
+    if match_info:
+        updated_matches[new_rsn] = match_info
+    else:
+        unmatched_renames.append(entry)
 
-          git add clan_ranks_for_bot.json output/*.json || true
-          git diff --quiet && git diff --staged --quiet || git commit -m "Full sync update"
-          git push || echo "Nothing to push or push failed (may be up-to-date)"
+# Save result
+os.makedirs("output", exist_ok=True)
+with open(OUTPUT_UPDATED_FILE, "w", encoding="utf-8") as f:
+    json.dump(updated_matches, f, indent=2)
+
+# Print summary
+print(f"✅ New RSNs matched: {len(updated_matches)}")
+print(f"❌ Renames unmatched: {len(unmatched_renames)}")
+if unmatched_renames:
+    print("\nUnmatched renames:")
+    for entry in unmatched_renames:
+        print(f"  {entry['old_rsn']} → {entry['new_rsn']} (joined {entry['joinedDate']})")
