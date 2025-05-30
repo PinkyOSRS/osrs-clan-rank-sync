@@ -32,8 +32,10 @@ jobs:
           if [ ! -s output/latest_rsn_changes.json ]; then
             echo "🟡 No RSN changes to process."
             exit 0
+          else
+            echo "✅ Detected RSN changes. Processing..."
+            python scripts/update_matched_members.py
           fi
-          python scripts/update_matched_members.py
 
       - name: Git commit and push (if changes)
         run: |
