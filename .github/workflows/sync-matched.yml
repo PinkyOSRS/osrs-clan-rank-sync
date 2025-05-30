@@ -3,7 +3,7 @@ name: Match RSNs to Discord
 on:
   push:
     paths:
-      - 'data/clan_ranks_for_bot.json'
+      - 'clan_ranks_for_bot.json'
       - 'data/discord_members.csv'
   workflow_dispatch:  # Manual trigger
 
