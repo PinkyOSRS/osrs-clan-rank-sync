@@ -1,0 +1,690 @@
+{
+    "clanName": "Theoatrix",
+    "clanMemberMaps": [
+        {
+            "rsn": "04 8",
+            "rank": "Beast",
+            "joinedDate": "13-Sep-2024"
+        },
+        {
+            "rsn": "28Baby",
+            "rank": "Onyx",
+            "joinedDate": "25-May-2021"
+        },
+        {
+            "rsn": "3zR",
+            "rank": "Administrator",
+            "joinedDate": "10-Oct-2021"
+        },
+        {
+            "rsn": "A13susflat9",
+            "rank": "Beast",
+            "joinedDate": "27-Nov-2021"
+        },
+        {
+            "rsn": "Adiyama",
+            "rank": "Beast",
+            "joinedDate": "21-Mar-2023"
+        },
+        {
+            "rsn": "AFK ZOMBIE",
+            "rank": "Beast",
+            "joinedDate": "3-Jul-2021"
+        },
+        {
+            "rsn": "Alets",
+            "rank": "Onyx",
+            "joinedDate": "25-May-2021"
+        },
+        {
+            "rsn": "A M Y",
+            "rank": "Beast",
+            "joinedDate": "1-Jan-2025"
+        },
+        {
+            "rsn": "b0ws sp3cs",
+            "rank": "Beast",
+            "joinedDate": "12-Jun-2022"
+        },
+        {
+            "rsn": "bash my gash",
+            "rank": "Onyx",
+            "joinedDate": "29-May-2021"
+        },
+        {
+            "rsn": "Betray to pk",
+            "rank": "Dragonstone",
+            "joinedDate": "19-May-2022"
+        },
+        {
+            "rsn": "Blitti",
+            "rank": "Onyx",
+            "joinedDate": "28-May-2021"
+        },
+        {
+            "rsn": "BoiledSalami",
+            "rank": "Beast",
+            "joinedDate": "5-Jul-2021"
+        },
+        {
+            "rsn": "Brejin",
+            "rank": "Beast",
+            "joinedDate": "10-Sep-2021"
+        },
+        {
+            "rsn": "Bunnings BBQ",
+            "rank": "Deputy Owner",
+            "joinedDate": "25-Dec-2022"
+        },
+        {
+            "rsn": "C0buds",
+            "rank": "Dragonstone",
+            "joinedDate": "26-Jun-2022"
+        },
+        {
+            "rsn": "Caesum",
+            "rank": "Beast",
+            "joinedDate": "25-May-2021"
+        },
+        {
+            "rsn": "Cajun Nick",
+            "rank": "Onyx",
+            "joinedDate": "26-May-2021"
+        },
+        {
+            "rsn": "Chaotic Slap",
+            "rank": "Beast",
+            "joinedDate": "18-Mar-2023"
+        },
+        {
+            "rsn": "Chilli Peez",
+            "rank": "Beast",
+            "joinedDate": "29-Oct-2021"
+        },
+        {
+            "rsn": "CObuds",
+            "rank": "Dragonstone",
+            "joinedDate": "7-Jun-2022"
+        },
+        {
+            "rsn": "Cork 2369",
+            "rank": "Beast",
+            "joinedDate": "17-Sep-2021"
+        },
+        {
+            "rsn": "D1no_Nuggets",
+            "rank": "Beast",
+            "joinedDate": "26-May-2021"
+        },
+        {
+            "rsn": "Dariussy III",
+            "rank": "Beast",
+            "joinedDate": "27-Feb-2023"
+        },
+        {
+            "rsn": "DavidTennant",
+            "rank": "Beast",
+            "joinedDate": "5-Jan-2024"
+        },
+        {
+            "rsn": "DeerlyYours",
+            "rank": "Dragonstone",
+            "joinedDate": "12-Jun-2022"
+        },
+        {
+            "rsn": "Devin Boul",
+            "rank": "Beast",
+            "joinedDate": "3-Feb-2023"
+        },
+        {
+            "rsn": "DJ Sassy",
+            "rank": "Administrator",
+            "joinedDate": "2-Nov-2021"
+        },
+        {
+            "rsn": "DroPartyBank",
+            "rank": "Deputy Owner",
+            "joinedDate": "20-Oct-2024"
+        },
+        {
+            "rsn": "Eamos",
+            "rank": "Master",
+            "joinedDate": "26-May-2025"
+        },
+        {
+            "rsn": "Eskii",
+            "rank": "Dragonstone",
+            "joinedDate": "16-Sep-2021"
+        },
+        {
+            "rsn": "EwwBankies",
+            "rank": "Beast",
+            "joinedDate": "2-Dec-2022"
+        },
+        {
+            "rsn": "Fulgore XY",
+            "rank": "Master",
+            "joinedDate": "10-Jun-2024"
+        },
+        {
+            "rsn": "GI Sassy",
+            "rank": "Deputy Owner",
+            "joinedDate": "3-Jan-2022"
+        },
+        {
+            "rsn": "Gold Dude68",
+            "rank": "Onyx",
+            "joinedDate": "25-May-2021"
+        },
+        {
+            "rsn": "Gol D Shroom",
+            "rank": "Beast",
+            "joinedDate": "26-May-2021"
+        },
+        {
+            "rsn": "Haw kiee",
+            "rank": "Beast",
+            "joinedDate": "29-May-2021"
+        },
+        {
+            "rsn": "Hazardd17",
+            "rank": "Beast",
+            "joinedDate": "21-Jul-2022"
+        },
+        {
+            "rsn": "HCpancakeV4",
+            "rank": "Beast",
+            "joinedDate": "16-Apr-2024"
+        },
+        {
+            "rsn": "HCWoah",
+            "rank": "Master",
+            "joinedDate": "25-May-2021"
+        },
+        {
+            "rsn": "Honor Bones",
+            "rank": "Beast",
+            "joinedDate": "5-Nov-2022"
+        },
+        {
+            "rsn": "Hyde",
+            "rank": "Beast",
+            "joinedDate": "27-May-2021"
+        },
+        {
+            "rsn": "iiFebreze",
+            "rank": "Dragonstone",
+            "joinedDate": "10-May-2022"
+        },
+        {
+            "rsn": "iPhone Game",
+            "rank": "Beast",
+            "joinedDate": "19-May-2025"
+        },
+        {
+            "rsn": "Iron_Gweedz",
+            "rank": "Beast",
+            "joinedDate": "13-Jun-2022"
+        },
+        {
+            "rsn": "IronToo Lazy",
+            "rank": "Master",
+            "joinedDate": "15-Mar-2024"
+        },
+        {
+            "rsn": "Iron A M Y",
+            "rank": "Deputy Owner",
+            "joinedDate": "24-May-2025"
+        },
+        {
+            "rsn": "iToo Lazy",
+            "rank": "Master",
+            "joinedDate": "9-Jan-2024"
+        },
+        {
+            "rsn": "I Am Nutz",
+            "rank": "Deputy Owner",
+            "joinedDate": "3-Aug-2023"
+        },
+        {
+            "rsn": "Jammy3542",
+            "rank": "Beast",
+            "joinedDate": "12-Jan-2024"
+        },
+        {
+            "rsn": "Killerruin12",
+            "rank": "Beast",
+            "joinedDate": "25-May-2021"
+        },
+        {
+            "rsn": "KlutchVodka",
+            "rank": "Deputy Owner",
+            "joinedDate": "29-Dec-2024"
+        },
+        {
+            "rsn": "KlutchWhisky",
+            "rank": "Deputy Owner",
+            "joinedDate": "14-Jul-2023"
+        },
+        {
+            "rsn": "K O E N",
+            "rank": "Beast",
+            "joinedDate": "19-Jun-2023"
+        },
+        {
+            "rsn": "Lachybachyy",
+            "rank": "Onyx",
+            "joinedDate": "26-May-2021"
+        },
+        {
+            "rsn": "LilGherkin",
+            "rank": "Dragonstone",
+            "joinedDate": "3-Jul-2021"
+        },
+        {
+            "rsn": "Lionfish26",
+            "rank": "Coordinator",
+            "joinedDate": "22-Jan-2025"
+        },
+        {
+            "rsn": "Lordosis",
+            "rank": "Dragonstone",
+            "joinedDate": "8-Jul-2021"
+        },
+        {
+            "rsn": "lron A M Y",
+            "rank": "Master",
+            "joinedDate": "26-May-2021"
+        },
+        {
+            "rsn": "Medieval MP5",
+            "rank": "Beast",
+            "joinedDate": "31-May-2021"
+        },
+        {
+            "rsn": "mibs66",
+            "rank": "Beast",
+            "joinedDate": "25-May-2021"
+        },
+        {
+            "rsn": "Mintella",
+            "rank": "Administrator",
+            "joinedDate": "23-Oct-2024"
+        },
+        {
+            "rsn": "Mithod",
+            "rank": "Carry",
+            "joinedDate": "18-May-2025"
+        },
+        {
+            "rsn": "MrFire",
+            "rank": "Dragonstone",
+            "joinedDate": "6-Jun-2022"
+        },
+        {
+            "rsn": "Mr Clutch",
+            "rank": "Deputy Owner",
+            "joinedDate": "11-Feb-2024"
+        },
+        {
+            "rsn": "Mr Clutchy",
+            "rank": "Deputy Owner",
+            "joinedDate": "6-Sep-2024"
+        },
+        {
+            "rsn": "Mr Oppossum",
+            "rank": "Onyx",
+            "joinedDate": "27-May-2021"
+        },
+        {
+            "rsn": "Mr Possum",
+            "rank": "Beast",
+            "joinedDate": "25-May-2021"
+        },
+        {
+            "rsn": "N0TaPancake",
+            "rank": "Beast",
+            "joinedDate": "26-May-2021"
+        },
+        {
+            "rsn": "Nahanam",
+            "rank": "Beast",
+            "joinedDate": "28-Dec-2021"
+        },
+        {
+            "rsn": "nang doctor",
+            "rank": "Dragonstone",
+            "joinedDate": "31-May-2022"
+        },
+        {
+            "rsn": "Nolzyyy",
+            "rank": "Administrator",
+            "joinedDate": "19-Oct-2021"
+        },
+        {
+            "rsn": "Nolzy Mate",
+            "rank": "Administrator",
+            "joinedDate": "25-May-2021"
+        },
+        {
+            "rsn": "Not Woody107",
+            "rank": "Beast",
+            "joinedDate": "29-Jul-2021"
+        },
+        {
+            "rsn": "NPC_CRY",
+            "rank": "Beast",
+            "joinedDate": "26-May-2021"
+        },
+        {
+            "rsn": "Nuccles",
+            "rank": "Dragonstone",
+            "joinedDate": "13-Jun-2022"
+        },
+        {
+            "rsn": "oneilldude",
+            "rank": "Dragonstone",
+            "joinedDate": "1-Nov-2021"
+        },
+        {
+            "rsn": "One Side Red",
+            "rank": "Beast",
+            "joinedDate": "22-Sep-2021"
+        },
+        {
+            "rsn": "Pantres",
+            "rank": "Dragonstone",
+            "joinedDate": "5-Jan-2022"
+        },
+        {
+            "rsn": "PantsShiter",
+            "rank": "Beast",
+            "joinedDate": "18-Jan-2023"
+        },
+        {
+            "rsn": "PaperHat27",
+            "rank": "Beast",
+            "joinedDate": "17-Feb-2024"
+        },
+        {
+            "rsn": "Phil Lynott",
+            "rank": "Beast",
+            "joinedDate": "10-Jul-2022"
+        },
+        {
+            "rsn": "pinky_juerg",
+            "rank": "Deputy Owner",
+            "joinedDate": "25-May-2021"
+        },
+        {
+            "rsn": "Pinky Logged",
+            "rank": "Deputy Owner",
+            "joinedDate": "9-Jun-2023"
+        },
+        {
+            "rsn": "Pinzcenti",
+            "rank": "Dragonstone",
+            "joinedDate": "13-Jun-2022"
+        },
+        {
+            "rsn": "pluma",
+            "rank": "Onyx",
+            "joinedDate": "26-May-2021"
+        },
+        {
+            "rsn": "Prismatica",
+            "rank": "Beast",
+            "joinedDate": "21-Jun-2021"
+        },
+        {
+            "rsn": "PsyFarts",
+            "rank": "Onyx",
+            "joinedDate": "29-May-2021"
+        },
+        {
+            "rsn": "Pyggylyg",
+            "rank": "Beast",
+            "joinedDate": "26-May-2021"
+        },
+        {
+            "rsn": "QuakerOats",
+            "rank": "Beast",
+            "joinedDate": "21-Dec-2022"
+        },
+        {
+            "rsn": "Randdall",
+            "rank": "Beast",
+            "joinedDate": "29-May-2023"
+        },
+        {
+            "rsn": "Rarities",
+            "rank": "Beast",
+            "joinedDate": "18-Apr-2024"
+        },
+        {
+            "rsn": "RaysCyste",
+            "rank": "Beast",
+            "joinedDate": "24-Sep-2024"
+        },
+        {
+            "rsn": "Reegarded",
+            "rank": "Beast",
+            "joinedDate": "9-Nov-2024"
+        },
+        {
+            "rsn": "rixxri",
+            "rank": "Beast",
+            "joinedDate": "28-Feb-2023"
+        },
+        {
+            "rsn": "RottingSoul",
+            "rank": "Onyx",
+            "joinedDate": "26-May-2021"
+        },
+        {
+            "rsn": "Roz TB",
+            "rank": "Beast",
+            "joinedDate": "26-May-2021"
+        },
+        {
+            "rsn": "Runeashes814",
+            "rank": "Onyx",
+            "joinedDate": "26-May-2021"
+        },
+        {
+            "rsn": "SadBiologist",
+            "rank": "Beast",
+            "joinedDate": "13-Jun-2022"
+        },
+        {
+            "rsn": "Saggyyy",
+            "rank": "Dragonstone",
+            "joinedDate": "14-Sep-2021"
+        },
+        {
+            "rsn": "SamWisely",
+            "rank": "Beast",
+            "joinedDate": "20-Mar-2023"
+        },
+        {
+            "rsn": "Sassy Matee",
+            "rank": "Master",
+            "joinedDate": "25-May-2021"
+        },
+        {
+            "rsn": "Schrem",
+            "rank": "Beast",
+            "joinedDate": "25-May-2021"
+        },
+        {
+            "rsn": "Sea Of Boats",
+            "rank": "Beast",
+            "joinedDate": "24-May-2025"
+        },
+        {
+            "rsn": "Seymour Ass",
+            "rank": "Beast",
+            "joinedDate": "10-Apr-2023"
+        },
+        {
+            "rsn": "Shipperr",
+            "rank": "Dragonstone",
+            "joinedDate": "28-Jun-2022"
+        },
+        {
+            "rsn": "Sielak",
+            "rank": "Beast",
+            "joinedDate": "1-May-2022"
+        },
+        {
+            "rsn": "SilharaTC",
+            "rank": "Dragonstone",
+            "joinedDate": "19-Jun-2022"
+        },
+        {
+            "rsn": "SmokeXx",
+            "rank": "Beast",
+            "joinedDate": "9-Mar-2024"
+        },
+        {
+            "rsn": "Sniithy",
+            "rank": "Dragonstone",
+            "joinedDate": "16-Jul-2021"
+        },
+        {
+            "rsn": "SpeedyBoi",
+            "rank": "Master",
+            "joinedDate": "8-Sep-2024"
+        },
+        {
+            "rsn": "StragoM",
+            "rank": "Beast",
+            "joinedDate": "22-Aug-2024"
+        },
+        {
+            "rsn": "Suplexed",
+            "rank": "Beast",
+            "joinedDate": "18-Sep-2021"
+        },
+        {
+            "rsn": "S amR",
+            "rank": "Beast",
+            "joinedDate": "22-Jun-2024"
+        },
+        {
+            "rsn": "TheAceFarmer",
+            "rank": "Master",
+            "joinedDate": "31-Mar-2025"
+        },
+        {
+            "rsn": "TheGayFarmer",
+            "rank": "Deputy Owner",
+            "joinedDate": "25-May-2021"
+        },
+        {
+            "rsn": "TheGayScaper",
+            "rank": "Master",
+            "joinedDate": "24-May-2024"
+        },
+        {
+            "rsn": "Thelonar",
+            "rank": "Beast",
+            "joinedDate": "15-Aug-2021"
+        },
+        {
+            "rsn": "The Deadshot",
+            "rank": "Master",
+            "joinedDate": "11-Mar-2025"
+        },
+        {
+            "rsn": "Tiggyhero",
+            "rank": "Dragonstone",
+            "joinedDate": "19-May-2022"
+        },
+        {
+            "rsn": "TinaBranford",
+            "rank": "Beast",
+            "joinedDate": "2-Sep-2021"
+        },
+        {
+            "rsn": "Toa566",
+            "rank": "Onyx",
+            "joinedDate": "1-Jun-2021"
+        },
+        {
+            "rsn": "trav50",
+            "rank": "Beast",
+            "joinedDate": "26-May-2021"
+        },
+        {
+            "rsn": "Trey has",
+            "rank": "Beast",
+            "joinedDate": "8-Aug-2022"
+        },
+        {
+            "rsn": "UIM K x t",
+            "rank": "Deputy Owner",
+            "joinedDate": "28-Mar-2025"
+        },
+        {
+            "rsn": "UIM Theo",
+            "rank": "Deputy Owner",
+            "joinedDate": "18-Sep-2021"
+        },
+        {
+            "rsn": "Upsider",
+            "rank": "Beast",
+            "joinedDate": "18-May-2025"
+        },
+        {
+            "rsn": "vippaa20e",
+            "rank": "Coordinator",
+            "joinedDate": "26-Jun-2024"
+        },
+        {
+            "rsn": "Woahmen",
+            "rank": "Deputy Owner",
+            "joinedDate": "25-May-2021"
+        },
+        {
+            "rsn": "WoesMan",
+            "rank": "Dragonstone",
+            "joinedDate": "5-Oct-2021"
+        },
+        {
+            "rsn": "Woody107",
+            "rank": "Beast",
+            "joinedDate": "25-May-2021"
+        },
+        {
+            "rsn": "xBAUSSx",
+            "rank": "Beast",
+            "joinedDate": "25-Aug-2023"
+        },
+        {
+            "rsn": "Xion51",
+            "rank": "Beast",
+            "joinedDate": "25-May-2021"
+        },
+        {
+            "rsn": "Xion DontDie",
+            "rank": "Beast",
+            "joinedDate": "25-May-2021"
+        },
+        {
+            "rsn": "Xusoi",
+            "rank": "Onyx",
+            "joinedDate": "25-May-2021"
+        },
+        {
+            "rsn": "zsandy",
+            "rank": "Dragonstone",
+            "joinedDate": "25-Jun-2022"
+        },
+        {
+            "rsn": "ZulrahLTD",
+            "rank": "Beast",
+            "joinedDate": "11-Sep-2021"
+        }
+    ]
+}
